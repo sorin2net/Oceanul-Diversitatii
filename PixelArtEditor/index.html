@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pixel Art Editor</title>
-<link rel="stylesheet" href="style.css">
+  <title>Pixel Art Editor</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <canvas id="canvas" width="500" height="500"></canvas>
@@ -11,6 +11,14 @@
     <button id="clearButton">Clear</button>
     <button id="saveButton">Save</button>
     <input type="number" id="gridSize" value="10" min="1" max="100">
+    <input type="file" id="imageLoader" accept="image/*">
+    <select id="filterSelect">
+      <option value="">No Filter</option>
+      <option value="sepia">Sepia</option>
+      <option value="grayscale">Grayscale</option>
+      <option value="invert">Invert</option>
+    </select>
+    <button id="applyFilterButton">Apply Filter</button>
   </div>
   <script src="script.js"></script>
 </body>
