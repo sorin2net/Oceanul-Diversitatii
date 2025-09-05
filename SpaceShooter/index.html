@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Space Shooter</title>
+<style>
+body { margin: 0; }
+canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="800" height="600"></canvas>
+<script>
+const canvas = document.getElementById('myCanvas');
+const keysPressed = {};
+document.addEventListener('keydown', e => keysPressed[e.key] = true);
+document.addEventListener('keyup', e => keysPressed[e.key] = false);
+
+const game = new Game(canvas);
+let lastTime = 0;
+
+function gameLoop(timestamp) {
+  const deltaTime = timestamp - lastTime;
+  lastTime = timestamp;
+  game.update(deltaTime / 1000);
+  if(!game.gameOver) requestAnimationFrame(gameLoop);
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === ' ') {
+    game.fireBullet();
+  }
+});
+
+
+requestAnimationFrame(gameLoop);
+
+</script>
+</body>
+</html>
