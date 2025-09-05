@@ -1,0 +1,84 @@
+Acest proiect educativ prezintă o simplă aplicație de calcul a ariei unui dreptunghi.  Este împărțit în două fișiere: `index.html` și `script.js`.
+
+**index.html:**
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Aria Dreptunghiului</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calculator">
+    <h1>Calcul Aria Dreptunghi</h1>
+    <label for="lungime">Lungime:</label>
+    <input type="number" id="lungime" name="lungime"><br><br>
+    <label for="latime">Latime:</label>
+    <input type="number" id="latime" name="latime"><br><br>
+    <button onclick="calculeazaAria()">Calculează</button>
+    <p id="rezultat"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+```
+
+**script.js:**
+
+```javascript
+class AriaCalculator {
+  constructor() {}
+
+  calculeaza(lungime, latime) {
+    if (isNaN(lungime) || isNaN(latime) || lungime <= 0 || latime <= 0) {
+      return "Introduceți valori numerice pozitive.";
+    }
+    return lungime * latime;
+  }
+}
+
+const calculator = new AriaCalculator();
+
+function calculeazaAria() {
+  const lungime = parseFloat(document.getElementById("lungime").value);
+  const latime = parseFloat(document.getElementById("latime").value);
+  const rezultat = calculator.calculeaza(lungime, latime);
+  document.getElementById("rezultat").textContent = "Aria este: " + rezultat;
+}
+```
+
+**style.css:** (optional - adaugă stil)
+
+```css
+.calculator {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid 
+  border-radius: 5px;
+}
+
+.calculator label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.calculator input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.calculator button {
+  background-color: 
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+```
+
+Acest cod creează o interfață simplă pentru calcularea ariei unui dreptunghi folosind o clasă `AriaCalculator`.  Verifică și dacă datele introduse sunt valide.  Fișierul `style.css` (opțional) adaugă un stil minimalist.  Pentru a rula, salvați cele trei fișiere în același director și deschideți `index.html` într-un browser web.
