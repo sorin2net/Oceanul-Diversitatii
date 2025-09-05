@@ -1,13 +1,37 @@
-// This file would contain more advanced features like image loading, filters, etc.  This is a placeholder for future expansion.
+
 function loadAndProcessImage(imagePath) {
-  //This function would load an image from imagePath, and allow for applying filters,  resizing etc.  This is intentionally omitted for brevity, but a senior level developer would implement this.
+    const img = new Image();
+    img.src = imagePath;
+    img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    };
 }
 
 function applyFilter(imageData, filterType) {
-    //This function would apply different types of filters on the imageData.  This is intentionally omitted for brevity, but a senior level developer would implement this.
+    if (filterType === 'sepia') {
+        return sepiaFilter(imageData);
+    }
+    return imageData;
 }
 
-//Example of a complex filter function (placeholder)
 function sepiaFilter(imageData) {
-    // Complex image manipulation code would go here
+    const data = imageData.data;
+    for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+
+        data[i]     = Math.min(0.393*r + 0.769*g + 0.189*b, 255); // R
+        data[i + 1] = Math.min(0.349*r + 0.686*g + 0.168*b, 255); // G
+        data[i + 2] = Math.min(0.272*r + 0.534*g + 0.131*b, 255); // B
+    }
+    return imageData;
 }
+
+function applyFilterToCanvas(filterType) {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const filteredData = applyFilter(imageData, filterType);
+    ctx.putImageData(filteredData, 0, 0);
+}
+
