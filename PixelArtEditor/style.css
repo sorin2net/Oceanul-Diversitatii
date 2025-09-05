@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#canvas {
+  border: 1px solid black;
+}
+
+#toolbar {
+  margin-top: 10px;
+  display: flex;
+}
+
+#toolbar input, #toolbar button {
+  margin-right: 10px;
+}
