@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Maze Game</title>
+<style>
+body { margin: 0; }
+canvas { display: block; }
+</style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+<script src="mazeGenerator.js"></script>
+<script src="game.js"></script>
+<script>
+  const maze = new MazeGenerator(20, 15);
+  const game = new Game(maze);
+  game.init();
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowUp') game.movePlayer(0, -1);
+    if(e.key === 'ArrowDown') game.movePlayer(0, 1);
+    if(e.key === 'ArrowLeft') game.movePlayer(-1, 0);
+    if(e.key === 'ArrowRight') game.movePlayer(1, 0);
+  });
+  game.start();
+</script>
+</body>
+</html>
