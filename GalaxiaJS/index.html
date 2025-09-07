@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QuizMaster</title>
+  <style>
+    body { font-family: sans-serif; }
+    .question ul { list-style: none; padding: 0; }
+    .question li { margin-bottom: 10px; }
+    .question button { padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+    .results { text-align: center; }
+  </style>
+</head>
+<body>
+  <div id="quiz"></div>
+  <script src="question.js"></script>
+  <script src="quiz.js"></script>
+  <script src="quiz_data.js"></script>
+  <script>
+    const quiz = new Quiz(questionsData);
+    function updateQuiz() {
+      document.getElementById('quiz').innerHTML = quiz.generateQuizHTML();
+      const buttons = document.querySelectorAll('.option');
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          quiz.checkAnswer(button.textContent);
+          updateQuiz();
+        });
+      });
+    }
+    updateQuiz();
+  </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+const questionsData = [
+  new Question("Care este capitala Franței?", ["Berlin", "Paris", "Roma", "Madrid"], "Paris"),
+  new Question("Care este cel mai înalt munte din lume?", ["K2", "Kangchenjunga", "Mount Everest", "Lhotse"], "Mount Everest"),
+  new Question("Care este cel mai mare ocean din lume?", ["Oceanul Atlantic", "Oceanul Indian", "Oceanul Arctic", "Oceanul Pacific"], "Oceanul Pacific"),
+  new Question("Care este planeta cea mai apropiată de Soare?", ["Venus", "Marte", "Mercur", "Jupiter"], "Mercur"),
+  new Question("Care este simbolul chimic al apei?", ["CO2", "H2O", "NaCl", "O2"], "H2O"),
+  new Question("În ce an a fost descoperită America?", ["1492", "1776", "1812", "1945"], "1492"),
+  new Question("Cine a pictat Mona Lisa?", ["Michelangelo", "Raphael", "Leonardo da Vinci", "Donatello"], "Leonardo da Vinci"),
+  new Question("Care este cea mai mare țară din lume?", ["Canada", "Rusia", "China", "Statele Unite ale Americii"], "Rusia"),
+  new Question("Cine a scris Hamlet?", ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"], "William Shakespeare"),
+  new Question("Care este formula chimică a dioxidului de carbon?", ["H2O", "CO2", "O2", "N2"], "CO2"),
+  new Question("Care este capitala Italiei?", ["Roma", "Atena", "Berlin", "Madrid"], "Roma"),
+  new Question("Care este cea mai lungă râul din lume?", ["Amazon", "Nil", "Yangtze", "Mississippi"], "Nil"),
+  new Question("Care este cel mai mare lac din lume?", ["Lacul Superior", "Lacul Victoria", "Lacul Baikal", "Lacul Huron"], "Lacul Caspic"),
+  new Question("Care este capitala Japoniei?", ["Beijing", "Seul", "Tokio", "Bangkok"], "Tokio"),
+  new Question("Care este cel mai înalt munte din America de Nord?", ["Kilimanjaro", "Denali", "Aconcagua", "Elbrus"], "Denali"),
+  new Question("Care este unitatea de măsură pentru temperatură?", ["Amper", "Volt", "Kelvin", "Joule"], "Kelvin"),
+  new Question("Cine a inventat becul cu incandescență?", ["Thomas Edison", "Nikola Tesla", "Benjamin Franklin", "Albert Einstein"], "Thomas Edison"),
+  new Question("Care este viteza luminii în vid?", ["299 792 458 m/s", "300 000 km/s", "300 000 m/s", "299 792 458 km/s"], "299 792 458 m/s"),
+  new Question("Care este simbolul chimic al aurului?", ["Ag", "Fe", "Au", "Hg"], "Au"),
+  new Question("Care este numărul lui Avogadro?", ["6.022 x 10^23", "6.022 x 10^22", "6.022 x 10^24", "6.022 x 10^21"], "6.022 x 10^23")
+];
